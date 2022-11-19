@@ -42,16 +42,16 @@ def qr(request):
 
 def qaa(request): 
      server=smtplib.SMTP_SSL("smtp.gmail.com", 465)
-     server.login("maria.vasilache02@gmail.com", "qgrqmaoreadfcszp")
+     server.login("maria.vase02@gmail.com", "dih gmail")
      server.sendmail("maria.vasilache02@gmail.com", "maria.vasilache02@gmail.com", "perfect")
      server.quit()
 #afiseaza doar in consola     
 #     subject = request.POST.get('subject', 'hhh')
 #     message = request.POST.get('message', 'jjj')
-#     from_email = request.POST.get('from_email', 'maria.vasilache02@gmail.com')
+#     from_email = request.POST.get('from_email', 'maria.vagmail.com')
 #     if subject and message and from_email:
 #         try:
-#             send_mail(subject, message, from_email, ['maria.vasilache02@gmail.com'])
+#             send_mail(subject, message, from_email, ['maria.@gmail.com'])
 #         except BadHeaderError:
      #return HttpResponse('ok')
      return render(request, 'QR/QandA.html')
