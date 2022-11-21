@@ -1,107 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>CV</title>
-  <link rel="icon" type="image/x-icon" href="https://www.logolynx.com/images/logolynx/f7/f729f82b040ce6f1cbc0b812028371e8.png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Send Email</title>
   </head>
-<body>
-   
-  <div class="p-3">
-    <a href="{% url 'home' %}" class="btn btn-danger btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Enter in your account" tabindex="-1" role="button" aria-disabled="true"><i class="fa fa-home"></i>Home</a>
-</div>   
-
-<div class="card-body">
-    <div class="alert alert-danger" role="alert">
-    <h1 class="font-weight-light text-center py-4">Contact Us-For CV issues</h1> 
-  </div>
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-12">    
-
-<div class=" form-row">
-    <div class="form-group">
-      {% comment %} rez {% endcomment %}
-    </div>
-  </div>
-  <div class=" form-row">
-    <div class="form-group col-lg-6 col-md-8 col-sm-8 col-8">
-      <label for="firstName">First name</label>
-      <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First name" required>
-    </div>
-    <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
-      <label for="lastName">Last name</label>
-      <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last name" required>
-    </div>
-  </div>
-  <form enctype="multipart/form-data" action="#" method="POST">
-  <div class="form-row">
-    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-      <label for="email">Email</label>
-      <input type="Email" id="email" name="email" class="form-control" placeholder="Email" required>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-      <label for="phone">Phone number</label>
-      <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone number" required>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="5" class="form-control" placeholder="Write Your Message" required></textarea>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="newsletter" name="newsletter">
-        <label class="form-check-label" for="newsletter">
-          Do you want to subscribe to our newsletter?
-        </label>
+  <body>
+    {% comment %} aici modifici sa nu mai ai pagina urata {% endcomment %}
+    {% if messageSent %}
+    
+    <div class="container"><br></br>
+      {% comment %} <div class="alert alert-success" role="alert">
+        Email successfully sent <a href="#" class="alert-link"></a>
       </div>
+     </div> {% endcomment %}
+     <div class="p-1">
+      <a href="{% url 'home' %}" class="btn btn-success btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Enter in your account" tabindex="-1" role="button" aria-disabled="true"><i class="fa fa-home"></i>Home</a>
+  </div> 
+    <div class="card">
+      <div class="card-body">
+      
+        <p class="card-text"><div class="alert alert-success" role="alert">
+          Email successfully sent <a href="#" class="alert-link"></a>
+        </div></p>
+      
+      </div><div class="col-md-4">
+      <img src="https://thumbs.dreamstime.com/b/send-us-message-glassy-green-round-button-isolated-abstract-illustration-97495097.jpg" class="card-img-bottom">
     </div>
   </div>
-  <div class="form-row">
-    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-      <label for="contact">How do you want to be contacted?</label>
-      <select id="contact" name="contact" class="form-select form-control">
-        <option value="1">Email</option>
-        <option value="2">Phone</option>
-        <option value="3">Message</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-      <label for="formFile" class="form-label">Please attach your CV / resume in PDF format</label>
-      <input type="file" name="formFile" id="formFile" onchange="return fileValidation()" accept="application/pdf,application/vnd.ms-excel" class="form-control" required>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-lg-4 aligne: center">
-      <button type="submit" name="submit" value="Send" class="btn btn-danger btn-block" id="sendBtn">Send message!</button>
-    </div>
-  </div>
-</form>
 
+    {% else %}
+   
+    <div class="card mb-7" style="max-width: 940px;">
+      <div class="row g-7">
+        <div class="col-md-4">
+          <a href="{% url 'home' %}"><img src="https://th.bing.com/th/id/OIP.JFqT7KZtRP-EYjpJVVfqyQHaEU?pid=ImgDet&w=1200&h=700&rs=1" class="img-fluid center"></a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"> <div class="alert alert-primary" role="alert">
+              Send an E-mail about CV issue<a href="#" class="alert-link"></a>
+</div></h5>
+            <p class="card-text">
+              <form method="post">
+                {% comment %} {% csrf_token %} {{ form.as_p }} {% endcomment %}
+                <input type="hidden" name="csrfmiddlewaretoken" value="vgyNsxCvRbmRfArHBNaJJBYrCsDbF2AZtkmKLZ20rbocnU0dcSZN1uM3IQXfYrLL"> <p><label for="id_recipient">Email:</label> <input type="email" name="recipient" required id="id_recipient"></p>
+        <p><label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message">
+        </textarea></p>
+        <div class="form-row">
+          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+            <label for="attach" class="form-label">Please attach your CV / resume in PDF format</label>
+            <input type="file" name="attach" id="attach" onchange="return fileValidation()" accept="application/pdf,application/vnd.ms-excel" class="form-control" required>
+          </div>
+        </div>
+        
+                <br />
+                <div class="text-center">
+                  <input
+                    type="submit"
+                    class="btn btn-primary btn-lg"
+                    style="width: 100%"
+                    value="Send e-mail"
+                  />
+                </div>
+              </form>
+
+            </p>
+              </div>
+        </div>
+      </div>
+   
+{% comment %}    
+    <div class="container">
+      <div class="alert alert-primary" role="alert">
+                         Send an E-mail about CV issue<a href="#" class="alert-link"></a>
+      </div> {% endcomment %}
+      
+      
+      {% comment %} <form method="post">
+      
+        <input type="hidden" name="csrfmiddlewaretoken" value="vgyNsxCvRbmRfArHBNaJJBYrCsDbF2AZtkmKLZ20rbocnU0dcSZN1uM3IQXfYrLL"> <p><label for="id_recipient">Email:</label> <input type="email" name="recipient" required id="id_recipient"></p>
+<p><label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message">
+</textarea></p>
+<div class="form-row">
+  <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+    <label for="attach" class="form-label">Please attach your CV / resume in PDF format</label>
+    <input type="file" name="attach" id="attach" onchange="return fileValidation()" accept="application/pdf,application/vnd.ms-excel" class="form-control" required>
+  </div>
 </div>
-</div>
-</div>
-</div>
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <br />
+        <div class="text-center">
+          <input
+            type="submit"
+            class="btn btn-primary btn-lg"
+            style="width: 100%"
+            value="Send e-mail"
+          />
+        </div>
+      </form> {% endcomment %}
+    </div>
+    {% endif %}
   </body>
-
-  </html> 
+</html>
