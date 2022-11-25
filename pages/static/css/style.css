@@ -28,13 +28,9 @@ p {
     line-height: 20px;
 }
 
-img {
-    transition: opacity .5s;
-}
 
-img:hover {
-    opacity: .75;
-}
+
+
 
 a[href] {
     color          : var(--text-color);

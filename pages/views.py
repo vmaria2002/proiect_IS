@@ -45,6 +45,10 @@ class HomePageView(TemplateView):
     template_name = 'home.html'
 
 def newCV(request):
+      #se preiau toate datele din interfata si se vor pune in baza de date;
+
+
+
     return render(request, 'QR/newCV.html')  
 
 # def myCv(request):
@@ -123,10 +127,7 @@ def getSkills():
     i = 0
     gotoshow = ""
     while i < len(yourSkills):
-        if skillsPercent[i]:
-            skill = "<li><span class='main'>" + yourSkills[i] + "</span><span class='percent'>" + skillsPercent[i]  + "</span></li>"
-        else:
-            skill = "<li><span class='main full'>" + yourSkills[i] + "</span></li>"
+        skill = "<li><span class='main full'>" + yourSkills[i] + "</span></li>"
         i += 1
         gotoshow = gotoshow + skill
         if i == len(yourSkills):
@@ -182,6 +183,7 @@ def getSocials(shema, link):
             return html.unescape(gotoshow)
 
 def data():
+    #sa le preia din baza de date
     return {
         'titleCV' : titleCV,
         'yourName' : yourName,

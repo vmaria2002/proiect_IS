@@ -1,3 +1,4 @@
+# aici vei prelua toate datele din interfata cu campuri de completat
 # type here title you want
 titleCV = "CV"
 
@@ -32,7 +33,7 @@ yourContact = [
 ]
 
 # type here your birthday and (your age)
-yourBirthday = "6 Ian 2002 (20)"
+yourBirthday = "1/6/2002"
 
 # type here your skills
 yourSkills = [ 
@@ -45,14 +46,7 @@ yourSkills = [
 ]
 
 # type here your skills percent rate
-skillsPercent = [
-    '95',
-    '90',
-    '80',
-    '75',
-    '80',
-    '85',
-]
+
 
 # type here your hobbies
 yourHobbies = [
@@ -67,14 +61,12 @@ yourCerts = [
 
 # type here your education info
 yourEdu = [
-    ' Colegiul Codreanu, Barlad',
-    'Universitatea Tehnica din Cluj-Napoca'
-]
+    'Technical University Certificate'
+    ]
 
 # type here your education years (start-end)
 eduYear = [
-    '2016 - 2020',
-    '2020 - 2024'
+    '14/12/2016',
 ]
 
 # type here your work history
@@ -84,7 +76,7 @@ yourWork = [
 
 # type here your work years (start-end)
 workYear = [
-    'Iulie 2022'
+    '11/11/2022'
 ]
 
 # type here your projects

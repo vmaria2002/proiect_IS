@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <div class="p-3">
+    <div class="p-4">
+        <br></br>
         <a href="{% url 'home' %}" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Enter in your account" tabindex="-1" role="button" aria-disabled="true"><i class="fa fa-home"></i>Home</a>
     </div> 
     <div class="general__area">
@@ -48,13 +49,7 @@
                     </ol>
                 </div>
                 {% endif %}
-                {% if yourCerts %}
-                <div class="exp__box">
-                    <ol aria-label="Certificates">
-                        {{ yourCerts | safe }}
-                    </ol>
-                </div>
-                {% endif %}
+               
             </div>
         </div>
         <div class="mid__area">
@@ -84,13 +79,7 @@
                     </ol>
                 </div>
                 {% endif %}
-                {% if yourExtras %}
-                <div class="extras">
-                    <ol aria-label="Extras">
-                        {{ yourExtras | safe }}
-                    </ol>
-                </div>
-                {% endif %}
+               
             </div>
         </div>
     </div>
