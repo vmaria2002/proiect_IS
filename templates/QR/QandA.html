@@ -50,28 +50,22 @@
               Send an E-mail about CV issue<a href="#" class="alert-link"></a>
 </div></h5>
             <p class="card-text">
+
+
+              <h1>Contact Us</h1>
               <form method="post">
-                {% comment %} {% csrf_token %} {{ form.as_p }} {% endcomment %}
-                <input type="hidden" name="csrfmiddlewaretoken" value="vgyNsxCvRbmRfArHBNaJJBYrCsDbF2AZtkmKLZ20rbocnU0dcSZN1uM3IQXfYrLL"> <p><label for="id_recipient">Email:</label> <input type="email" name="recipient" required id="id_recipient"></p>
-        <p><label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message">
-        </textarea></p>
-        <div class="form-row">
-          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-            <label for="attach" class="form-label">Please attach your CV / resume in PDF format</label>
-            <input type="file" name="attach" id="attach" onchange="return fileValidation()" accept="application/pdf,application/vnd.ms-excel" class="form-control" required>
+                  {% csrf_token %}
+                  {{ form.as_p }}<div class="form-row">
+            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+                <label for="attach" class="form-label">Please attach your CV / resume in PDF format</label>
+  <input type="file" name="attach" id="attach" onchange="return fileValidation()" accept="application/pdf,application/vnd.ms-excel" class="form-control" required>
+            </div>
           </div>
-        </div>
-        
-                <br />
-                <div class="text-center">
-                  <input
-                    type="submit"
-                    class="btn btn-primary btn-lg"
-                    style="width: 100%"
-                    value="Send e-mail"
-                  />
-                </div>
-              </form>
+          <div class="form-actions">
+            <button type="submit">Send</button>
+          </div>
+      </form>
+
 
             </p>
               </div>
@@ -90,12 +84,7 @@
         <input type="hidden" name="csrfmiddlewaretoken" value="vgyNsxCvRbmRfArHBNaJJBYrCsDbF2AZtkmKLZ20rbocnU0dcSZN1uM3IQXfYrLL"> <p><label for="id_recipient">Email:</label> <input type="email" name="recipient" required id="id_recipient"></p>
 <p><label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message">
 </textarea></p>
-<div class="form-row">
-  <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
-    <label for="attach" class="form-label">Please attach your CV / resume in PDF format</label>
-    <input type="file" name="attach" id="attach" onchange="return fileValidation()" accept="application/pdf,application/vnd.ms-excel" class="form-control" required>
-  </div>
-</div>
+
 
         <br />
         <div class="text-center">
