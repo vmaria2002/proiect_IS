@@ -1,93 +1,58 @@
 # aici vei prelua toate datele din interfata cu campuri de completat
 # type here title you want
+from  mysqlP import *
+
+mycursor = connector()
+
 titleCV = "CV"
 
 # type here your name and surname
-yourName = "Vasilache Maria"
+yourName = mycursor.execute("SELECT yourName FROM cv")
 
 # type here current profession
-yourProfession = "Studenta"
+yourProfession =  mycursor.execute("SELECT yourProfession FROM cv")
 
 # type here your bio
-yourBio = "Studenta la Universitatea Tehnica Din Cluj-Napoca"
+yourBio = mycursor.execute("SELECT yourBio FROM cv")
 
 # type here your current location
-yourCountry = "Romania/Cluj-Napoca"
+yourCountry = mycursor.execute("SELECT yourCountry FROM cv")
 
 # if you want add another social media account, add here icon code of it
-socialContact = [
-    'fab fa-github',
-    'fab fa-linkedin',
-    'fab fa-facebook',
-]
+socialContact = mycursor.execute("SELECT socialContact FROM cv").split(",")
 
 # type here some contact
-yourContact = [
-    # github link
-    'https://github.com',
-    # linkedin link
-    'https://linkedin.com',
-    # instagram link
-    'https://facebook.com',
-    # mailto:...your email
-]
+yourContact = mycursor.execute("SELECT yourContact FROM cv").split(",")
 
 # type here your birthday and (your age)
-yourBirthday = "1/6/2002"
+yourBirthday = mycursor.execute("SELECT yourBirthday FROM cv")
 
 # type here your skills
-yourSkills = [ 
-    'HTML/CSS',
-    'JavaScript',
-    'PHP',
-    'MySQL',
-    'C#',
-    'Python'
-]
-
-# type here your skills percent rate
-
+yourSkills = mycursor.execute("SELECT yourSkills FROM cv").split(",")
 
 # type here your hobbies
-yourHobbies = [
-    'Voluntariat',
-    'Limbaje de programare'
-]
+yourHobbies =mycursor.execute("SELECT yourHobbies FROM cv").split(",")
 
 # type here your certificates
-yourCerts = [
-    'Technical University Certificate'
-]
+yourCerts =mycursor.execute("SELECT yourCerts FROM cv")
 
 # type here your education info
-yourEdu = [
-    'Technical University Certificate'
-    ]
+yourEdu = mycursor.execute("SELECT yourEdu FROM cv")
 
 # type here your education years (start-end)
-eduYear = [
-    '14/12/2016',
-]
+eduYear = mycursor.execute("SELECT eduYear FROM cv")
 
 # type here your work history
-yourWork = [
-    '11Digits -  Web Developer'
-]
+yourWork = mycursor.execute("SELECT yourWork FROM cv")
 
 # type here your work years (start-end)
-workYear = [
-    '11/11/2022'
-]
+workYear = mycursor.execute("SELECT workYear FROM cv")
 
 # type here your projects
-yourProject = [
-    'Java'
-]
+yourProject = mycursor.execute("SELECT yourProject FROM cv")
 
 # type here your projects link (if there is)
-projectLink = [
-    'https://github.com/vmaria2002/Internship'
-]
+projectLink = mycursor.execute("SELECT projectLink FROM cv")
 
 # type here your extras (driving license etc.)
 yourExtras = [
